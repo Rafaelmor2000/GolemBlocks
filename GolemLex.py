@@ -28,7 +28,7 @@ reserved = {
 
 # --- Tokenizer
 tokens = [ 'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'MOD', 'LPAREN', 'RPAREN',
-           'LBRACKET', 'RBRACKET', 'LBRACE', 'RBRACE', 'ID', 'CTE_B',
+           'LBRACKET', 'RBRACKET', 'LBRACE', 'RBRACE', 'ID',
            'CTE_I', 'CTE_F', 'CTE_C', 'CTE_S', 'GTHAN', 'LTHAN',
            'GEQUAL', 'LEQUAL', 'EQUAL', 'EQUALS', 'DIFFERENCE', 'SEMICOLON', 'COMMA'] + list(reserved.values())
 
@@ -62,6 +62,7 @@ t_SEMICOLON = r';'
 t_COMMA = r','
 
 t_CTE_S= r'"(.*?)"'
+t_CTE_C = r'(L)?\'([^\\\n]|(\\.))*?\''
 
 def t_CTE_ID(t):
     r'([a-z][a-zA-Z0-9]*)'
@@ -69,12 +70,12 @@ def t_CTE_ID(t):
         t.type = reserved[t.value]
     return t
 
-def t_CTE_FLOAT(t):
+def t_CTE_F(t):
     r'[-]?[0-9]+([.][0-9]+)'
     t.value = float(t.value)
     return t
 
-def t_CTE_INT(t):
+def t_CTE_I(t):
     r'[-]?[0-9]+'
     t.value = int(t.value)
     return t
