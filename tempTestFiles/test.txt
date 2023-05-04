@@ -1,0 +1,18 @@
+program test{
+    var int ancho;
+    var int largo;
+    var float area;
+    function void main() {
+        ancho = 5.8;
+        largo = -2.69;
+       area = ancho/largo;
+        if(largo > 0){
+        }
+        else{
+            if(largo < 1){
+                if(largo <> 0){        
+                }
+            }
+        }
+    }
+}

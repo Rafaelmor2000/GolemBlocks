@@ -2,8 +2,8 @@ import ply.lex as lex
 
 reserved = {
     'program' : 'PROGRAM',
-    'function' : 'FUNCTION',
     'main' : 'MAIN',
+    'function' : 'FUNCTION',
     'var' : 'VAR',
     'print' : 'PRINT',
     'if' : 'IF',
@@ -64,7 +64,7 @@ t_COMMA = r','
 t_CTE_S= r'"(.*?)"'
 t_CTE_C = r'(L)?\'([^\\\n]|(\\.))*?\''
 
-def t_CTE_ID(t):
+def t_ID(t):
     r'([a-z][a-zA-Z0-9]*)'
     if t.value in reserved:
         t.type = reserved[t.value]

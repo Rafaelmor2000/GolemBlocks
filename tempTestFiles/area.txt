@@ -1,0 +1,15 @@
+program area{
+    function void cool(){
+        var int ancho;
+        var int largo;
+        ancho = 5;
+        largo = -2;
+        print("el area del rectangulo es: ", ancho * largo);
+    }
+    
+    function int dope(){}
+
+    function void main(){
+        cool();
+    }
+}
