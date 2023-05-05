@@ -23,7 +23,10 @@ reserved = {
     'input' : 'INPUT',
     'return' : 'RETURN',
     'true' : 'TRUE',
-    'false' : 'FALSE'
+    'false' : 'FALSE',
+    'pow' : 'POW',
+    'sqrt' : 'SQRT',
+    'cbrt' : 'CBRT'
 }
 
 # --- Tokenizer
@@ -55,7 +58,7 @@ t_GEQUAL = r'\>='
 t_LEQUAL = r'\<='
 t_EQUAL = r'='
 t_EQUALS = r"=="
-t_DIFFERENCE = r"<>"
+t_DIFFERENCE = r"\<\>"
 
 
 t_SEMICOLON = r';'

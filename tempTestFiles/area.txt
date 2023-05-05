@@ -7,9 +7,7 @@ program area{
         print("el area del rectangulo es: ", ancho * largo);
     }
     
-    function int dope(){}
+    function float dope(){}
 
-    function void main(){
-        cool();
-    }
+    main(){}
 }

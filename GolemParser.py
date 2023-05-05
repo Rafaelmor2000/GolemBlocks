@@ -12,7 +12,7 @@ def error():
 
 
 def p_programa(p):
-    'programa : PROGRAM ID LBRACE programaDec programaFunc main RBRACE'
+    'programa : PROGRAM ID LBRACE programaDec programaFunc MAIN LPAREN RPAREN LBRACE programaDec bloque RBRACE RBRACE'
 
 def p_programaDec(p):
     '''programaDec : declaracion programaDec
@@ -33,8 +33,6 @@ def p_decMat(p):
     '''decMat : LBRACKET CTE_I RBRACKET
         | empty'''
 
-def p_main(p):
-    'main : FUNCTION VOID MAIN LPAREN RPAREN LBRACE programaDec bloque RBRACE'
 
 def p_function(p):
     'function : FUNCTION funcType ID LPAREN param RPAREN LBRACE programaDec bloque return RBRACE'
@@ -119,7 +117,10 @@ def p_lecturas(p):
         | empty'''
 
 def p_llamada(p):
-    'llamada : ID LPAREN llama RPAREN'
+    '''llamada : ID LPAREN llama RPAREN
+        | POW LPAREN llama RPAREN
+        | SQRT LPAREN llama RPAREN
+        | CBRT LPAREN llama RPAREN'''
 
 def p_llama(p):
     '''llama : expression llamas
